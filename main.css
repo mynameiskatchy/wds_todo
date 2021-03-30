@@ -46,6 +46,25 @@ body {
     padding-left: 1.1em;
 }
 
+.new {
+    background: transparent;
+    border: 0;
+    color: inherit;
+    border-bottom: 1px solid currentColor;
+    font-size: inherit;
+    outline: none;
+
+    transition: border-bottom 150ms ease-in;
+}
+
+.new:focus {
+    border-bottom-width: 3px;
+}
+
+.new:focus::placeholder {
+    opacity: 0.2;
+}
+
 .active-list {
     font-weight: active;
 }
