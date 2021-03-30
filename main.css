@@ -24,3 +24,15 @@ body {
         "...... lists  active ......" auto /
         1fr minmax(100px, 300px) minmax(250px, 500px) 1fr;
 }
+
+.title {
+    grid-area: header;
+}
+
+.all-tasks {
+    grid-area: lists;
+}
+
+.todo-list {
+    grid-area: active;
+}
