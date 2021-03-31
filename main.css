@@ -70,6 +70,10 @@ form {
     opacity: 0.2;
 }
 
+.new.list {
+    font-size: 1.2rem;
+}
+
 .active-list {
     font-weight: active;
 }
