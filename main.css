@@ -133,3 +133,8 @@ form {
 .todo-body {
     padding: var(--spacer);
 }
+
+[type="checkbox"] {
+    opacity: 0;
+    position: absolute;
+}
