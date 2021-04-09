@@ -138,3 +138,13 @@ form {
     opacity: 0;
     position: absolute;
 }
+
+.custom-checkbox {
+    --size: .75em;
+    display: inline-block;
+    width: var(--size);
+    height: var(--size);
+    cursor: pointer;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+}
