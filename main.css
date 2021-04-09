@@ -139,11 +139,30 @@ form {
     position: absolute;
 }
 
+.task label {
+    display: flex; 
+    align-items: center;
+    position: relative;
+    margin-bottom: 1.25em;
+}
+
+.task label:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: -50%;
+    height: 1px;
+    background-color: currentColor;
+    opacity: 0.1;
+}
+
 .custom-checkbox {
     --size: .75em;
     display: inline-block;
     width: var(--size);
     height: var(--size);
+    margin-right: var(--size);
     cursor: pointer;
     border: 2px solid currentColor;
     border-radius: 50%;
