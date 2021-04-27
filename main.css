@@ -159,12 +159,6 @@ form {
     transition: transform 200ms ease-in-out;
 }
 
-.task:hover .custom-checkbox,
-[type="checkbox"]:focus + label .custom-checkbox {
-    transform: scale(1.2);
-    color: var(--clr-primary);
-}
-
 .custom-checkbox {
     --size: .75em;
     display: inline-block;
@@ -174,4 +168,15 @@ form {
     cursor: pointer;
     border: 2px solid currentColor;
     border-radius: 50%;
+}
+
+.task:hover .custom-checkbox,
+[type="checkbox"]:focus + label .custom-checkbox {
+    transform: scale(1.2);
+    color: var(--clr-primary);
+}
+[type="checkbox"]:checked + label .custom-checkbox {
+    background: var(--clr-primary);
+    border-color: var(--clr-primary);
+    box-shadow: inset 0 0 0px 2px white;
 }
