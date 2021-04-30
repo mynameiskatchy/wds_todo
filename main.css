@@ -146,17 +146,21 @@ form {
     margin-bottom: 1.25em;
 }
 
-.task label:after {
+.task::after {
     content: "";
     position: absolute;
     right: 0;
     left: 0;
-    bottom: -50%;
+    bottom: -0.5em;
     height: 1px;
     background-color: currentColor;
     opacity: 0.1;
     transform: scale(1);
     transition: transform 200ms ease-in-out;
+}
+
+.task {
+    position: relative;
 }
 
 .custom-checkbox {
@@ -183,4 +187,13 @@ form {
 
 [type="checkbox"]:checked + label {
     opacity: 0.5;
+}
+
+.task label::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: currentColor;
 }
