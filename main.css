@@ -198,4 +198,12 @@ form {
     top: calc(50% - 3/2px);
     height: 3px;
     background: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 150ms ease-in-out;
+}
+
+[type="checkbox"]:checked + label::after {
+    transform: scaleX(1);
+    transform-origin: left;
 }
