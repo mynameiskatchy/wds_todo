@@ -143,6 +143,10 @@ form {
     display: inline-flex; 
     align-items: center;
     position: relative;
+}
+
+.task {
+    position: relative;
     margin-bottom: 1.25em;
 }
 
@@ -157,10 +161,6 @@ form {
     opacity: 0.1;
     transform: scale(1);
     transition: transform 200ms ease-in-out;
-}
-
-.task {
-    position: relative;
 }
 
 .custom-checkbox {
