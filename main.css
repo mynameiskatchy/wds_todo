@@ -138,6 +138,10 @@ form {
     padding: var(--spacer);
 }
 
+.new-task-creator .create {
+    color: var(--clr-primary);
+}
+
 [type="checkbox"] {
     opacity: 0;
     position: absolute;
@@ -211,3 +215,4 @@ form {
     transform: scaleX(1);
     transform-origin: left;
 }
+
