@@ -194,6 +194,7 @@ form {
     position: absolute;
     left: 0;
     right: 0;
+    left: 1.5em;
     top: calc(50% - 3/2px);
     height: 3px;
     background: currentColor;
