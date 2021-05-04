@@ -101,6 +101,10 @@ form {
     font-size: 1.2rem;
 }
 
+.new.task {
+    margin-bottom: 0;
+}
+
 .active-list {
     font-weight: 700;
 }
