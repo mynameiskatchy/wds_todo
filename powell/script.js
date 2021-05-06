@@ -9,7 +9,7 @@ function render() {
         // create DOM element accordingly
         const listElement = document.createElement('li')
         listElement.classList.add("list-name")
-        listElement.innterText = list
+        listElement.innerText = list
         // add DOM element to list container
         listsContainer.appendChild(listElement)
     })
