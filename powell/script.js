@@ -1,9 +1,6 @@
 const listsContainer = document.querySelector('[data-lists]')
 
-let lists = [
-    'name',
-    'todo'
-]
+let lists = ['name','todo']
 
 function render() {
     clearElement(listsContainer)
@@ -13,10 +10,13 @@ function render() {
         const listElement = document.createElement('li')
         listElement.classList.add("list-name")
         listElement.innterText = list
+        // add DOM element to list container
+        listsContainer.appendChild(listElement)
     })
 }
-
 
 function clearElement(element) {
 // To clear out given element
 }
+
+render()
