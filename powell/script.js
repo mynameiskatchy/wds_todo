@@ -17,6 +17,10 @@ function render() {
 
 function clearElement(element) {
 // To clear out given element
+    // check if element has a first child and remove children
+    while (element.firstChild) {
+        element.removeChild(element.firstChild)
+    }
 }
 
 render()
