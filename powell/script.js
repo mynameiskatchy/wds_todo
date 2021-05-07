@@ -1,6 +1,12 @@
 const listsContainer = document.querySelector('[data-lists]')
 
-let lists = ['name','todo']
+let lists = [{
+    id: 1,
+    name: 'name'
+}, {
+    id: 2,
+    name: 'todo'
+}]
 
 function render() {
     clearElement(listsContainer)
@@ -9,7 +15,7 @@ function render() {
         // create DOM element accordingly
         const listElement = document.createElement('li')
         listElement.classList.add("list-name")
-        listElement.innerText = list
+        listElement.innerText = list.name
         // add DOM element to list container
         listsContainer.appendChild(listElement)
     })
