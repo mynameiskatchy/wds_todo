@@ -14,6 +14,7 @@ function render() {
     lists.forEach(list => {
         // create DOM element accordingly
         const listElement = document.createElement('li')
+        listElement.dataset.listId = list.id
         listElement.classList.add("list-name")
         listElement.innerText = list.name
         // add DOM element to list container
