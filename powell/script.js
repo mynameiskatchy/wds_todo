@@ -71,8 +71,10 @@ function saveAndRender() {
 }
 
 function save() {
-    // save information in our local storage
+    // save & persist input in our local storage
     localStorage.setItem(LOCAL_STORAGE_LIST_KEY, JSON.stringify(lists))
+    // save & persist selected list item in local storage
+    localStorage.setItem(LOCAL_STORAGE_SELECTED_LIST_ID_KEY, selectedListID)
 }
 
 render()
