@@ -64,7 +64,19 @@ function render() {
     } else {
         listDisplayContainer.style.display = ''
         listTitleElement.innerText = selectedList.name
+        renderTaskCount(selectedList)
     }
+}
+
+function renderTaskCount(selectedList) {
+    // only count incomplete tasks
+    const incompleteTaskCount = selectedList.tasks.filter(task =>
+        !task.complete).length
+    // singular or plural
+    const taskString = incompleteTaskCount === 1 ? "task" : "tasks"
+    // combine
+    listCountElement.innerText = `${incompleteTaskCount} ${taskString} remaining`
+    
 }
 
 function renderLists() {
