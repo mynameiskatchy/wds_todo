@@ -4,7 +4,9 @@ const newListForm = document.querySelector('[data-new-list-form]')
 const newListInput = document.querySelector('[data-new-list-input]')
 
 const LOCAL_STORAGE_LIST_KEY = 'task.lists' 
+const LOCAL_STORAGE_SELECTED_LIST_ID_KEY = 'task.selectedListId'
 let lists = JSON.parse(localStorage.getItem(LOCAL_STORAGE_LIST_KEY)) || []
+let selectedListID = localStorage.getItem(LOCAL_STORAGE_SELECTED_LIST_ID_KEY) || []
 
 newListForm.addEventListener('submit', e => {
     // for every time form in submitted
@@ -39,6 +41,10 @@ function render() {
         listElement.dataset.listId = list.id
         listElement.classList.add("list-name")
         listElement.innerText = list.name
+        // select active list
+        if (list.id === selectedListID) {
+            listElement.classList.add('active-list')
+        }
         // add DOM element to list container
         listsContainer.appendChild(listElement)
     })
