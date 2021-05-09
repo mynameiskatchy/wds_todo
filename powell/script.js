@@ -18,7 +18,7 @@ newListForm.addEventListener('submit', e => {
     newListInput.value = null
     // add to list
     lists.push(list)
-    render()
+    saveAndRender()
 })
 
 function createList(name) {
@@ -50,6 +50,16 @@ function clearElement(element) {
     while (element.firstChild) {
         element.removeChild(element.firstChild)
     }
+}
+
+function saveAndRender() {
+    save()
+    render()
+}
+
+function save() {
+    // save information in our local storage
+    localStorage.setItem(LOCAL_STORAGE_LIST_KEY, JSON.stringify(lists))
 }
 
 render()
