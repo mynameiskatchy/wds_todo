@@ -9,6 +9,8 @@ const listTitleElement = document.querySelector('[data-list-title]')
 const listCountElement = document.querySelector('[data-list-count]')
 const tasksContainer = document.querySelector('[data-tasks]')
 const taskTemplate = document.getElementById('task-template')
+const newTaskForm = document.querySelector('[data-new-task-form]')
+const newTaskInput = document.querySelector('[data-new-task-input]')
 
 const LOCAL_STORAGE_LIST_KEY = 'task.lists' 
 const LOCAL_STORAGE_SELECTED_LIST_ID_KEY = 'task.selectedListId'
@@ -44,12 +46,38 @@ newListForm.addEventListener('submit', e => {
     saveAndRender()
 })
 
+newTaskForm.addEventListener('submit', e => {
+    // for every time form in submitted
+    // prevent sumbitting / refreshing automatically when inputting
+    e.preventDefault()
+    const taskName = newTaskInput.value
+    if (taskName == null || taskName === '') return
+    // if they type in a name, create new list w/ input
+    const task = createTask(taskName)
+    // clear out input
+    newTaskInput.value = null
+    // get selected list
+    const selectedList = lists.find(list => list.id === selectedListID)
+    // add new task
+    selectedList.tasks.push(task)
+    saveAndRender()
+})
+
 function createList(name) {
     return {
         // create unique ID very easily based current time
         id: Date.now().toString(),
         name: name,
         tasks: []
+    }
+}
+
+function createTask(name) {
+    return {
+        // create unique ID very easily based current time
+        id: Date.now().toString(),
+        name: name,
+        complete: false
     }
 }
 
