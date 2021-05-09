@@ -12,15 +12,23 @@ let lists = [{
 }]
 
 newListForm.addEventListener('submit', e => {
-    // prevent sumbitting automatically when inputting
+    // for every time form in submitted
+    // prevent sumbitting / refreshing automatically when inputting
     e.preventDefault()
     const listName = newListInput.value
     if (listName == null || listName === '') return
+    // if they type in a name, create new list w/ input
     const list = createList(listName)
+    // clear out input
+    newListInput.value = null
+    // add to list
+    lists.push(list)
+    render()
 })
 
 function createList(name) {
     return {
+        // create unique ID very easily based current time
         id: Date.now().toString(),
         name: name,
         tasks: []
