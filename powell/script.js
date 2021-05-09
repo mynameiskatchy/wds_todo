@@ -8,6 +8,13 @@ const LOCAL_STORAGE_SELECTED_LIST_ID_KEY = 'task.selectedListId'
 let lists = JSON.parse(localStorage.getItem(LOCAL_STORAGE_LIST_KEY)) || []
 let selectedListID = localStorage.getItem(LOCAL_STORAGE_SELECTED_LIST_ID_KEY) || []
 
+listsContainer.addEventListener('click', e => {
+    if (e.target.tagName.toLowerCase() === 'li') {
+        selectedListID = e.target.dataset.listId
+        saveAndRender()
+    }
+})
+
 newListForm.addEventListener('submit', e => {
     // for every time form in submitted
     // prevent sumbitting / refreshing automatically when inputting
