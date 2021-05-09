@@ -54,7 +54,17 @@ function createList(name) {
 
 function render() {
     clearElement(listsContainer)
-    
+    renderLists()
+
+    // render tasks for selected list, else none if deleted
+    if (selectedListID == null) {
+        listDisplayContainer.style.display = 'none'
+    } else {
+        listDisplayContainer.style.display = ''
+    }
+}
+
+function renderLists() {
     lists.forEach(list => {
         // create DOM element accordingly
         const listElement = document.createElement('li')
