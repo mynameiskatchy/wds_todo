@@ -3,13 +3,11 @@ const listsContainer = document.querySelector('[data-lists]')
 const newListForm = document.querySelector('[data-new-list-form]')
 const newListInput = document.querySelector('[data-new-list-input]')
 
-let lists = [{
-    id: 1,
-    name: 'name'
-}, {
-    id: 2,
-    name: 'todo'
-}]
+// make namespace 
+// - prevent from overwriting things in local storage
+// - prevent other websites from overwriting your local storage keys
+const LOCAL_STORAGE_LIST_KEY = 'task.lists' 
+let lists = []
 
 newListForm.addEventListener('submit', e => {
     // for every time form in submitted
