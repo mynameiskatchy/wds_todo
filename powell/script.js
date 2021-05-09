@@ -11,6 +11,7 @@ const tasksContainer = document.querySelector('[data-tasks]')
 const taskTemplate = document.getElementById('task-template')
 const newTaskForm = document.querySelector('[data-new-task-form]')
 const newTaskInput = document.querySelector('[data-new-task-input]')
+const clearCompleteTasksButton = document.querySelector('[data-clear-complete-tasks-button]')
 
 const LOCAL_STORAGE_LIST_KEY = 'task.lists' 
 const LOCAL_STORAGE_SELECTED_LIST_ID_KEY = 'task.selectedListId'
@@ -34,6 +35,12 @@ tasksContainer.addEventListener('click', e => {
         save()
         renderTaskCount(selectedList)
     }
+})
+
+clearCompleteTasksButton.addEventListener('click', e => {
+    const selectedList = lists.find(list => list.id === selectedListID)
+    selectedList.tasks = selectedList.tasks.filter(task => !task.complete)
+    saveAndRender()
 })
 
 deleteListButton.addEventListener('click', e => {
