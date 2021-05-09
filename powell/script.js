@@ -56,11 +56,14 @@ function render() {
     clearElement(listsContainer)
     renderLists()
 
+    const selectedList = lists.find(list => list.id === selectedListID)
+
     // render tasks for selected list, else none if deleted
     if (selectedListID == null) {
         listDisplayContainer.style.display = 'none'
     } else {
         listDisplayContainer.style.display = ''
+        listTitleElement.innerText = selectedList.name
     }
 }
 
